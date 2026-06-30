@@ -1,0 +1,18 @@
+import{_ as x,o as c,c as o,j as s,G as u,H as _,n as m,t,J as C,w as f,e as p,T as w,y as b}from"./framework.CNUu10b_.js";const I={class:"iac-concept-demo"},D={class:"toggle-bar"},N=["onClick"],P={class:"scene-container"},B={key:"manual",class:"scene manual-scene"},R={class:"steps"},S={class:"step-num"},V={class:"step-icon"},E={class:"step-text"},G={class:"step-risk"},T=["disabled"],j={key:0,class:"result-box warning"},z={key:"iac",class:"scene iac-scene"},A={class:"iac-steps"},F={key:0,class:"iac-arrow"},H={class:"iac-badge"},J={class:"iac-label"},L=["disabled"],M={key:0,class:"result-box success"},W={class:"comparison-table"},$={class:"dim-cell"},q={class:"bad-cell"},K={class:"good-cell"},O=`resource "aws_instance" "web" {
+  ami           = "ami-0c55b159"
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "web-server"
+    Env  = "production"
+  }
+}
+
+resource "aws_security_group" "web_sg" {
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}`,Q={__name:"IaCConceptDemo",setup(U){const v=b("manual"),l=b(0),i=b(0),k=[{key:"manual",icon:"🖱️",label:"手动运维"},{key:"iac",icon:"📝",label:"基础设施即代码"}],d=[{icon:"🌐",text:"登录云控制台",risk:"需要记住密码"},{icon:"🖥️",text:"手动创建服务器",risk:"配置可能遗漏"},{icon:"🔧",text:"配置安全组规则",risk:"容易开放过多端口"},{icon:"💾",text:"挂载存储卷",risk:"大小可能选错"},{icon:"🔗",text:"配置负载均衡",risk:"路由规则易出错"},{icon:"📋",text:"手动记录到文档",risk:"文档很快过时"}],r=[{icon:"📝",text:"Write（编写代码）"},{icon:"🔍",text:"Plan（预览变更）"},{icon:"🚀",text:"Apply（自动执行）"},{icon:"✅",text:"Done（状态记录）"}],h=[{dim:"可重复性",manual:"每次操作可能不同",iac:"代码保证完全一致"},{dim:"速度",manual:"分钟到小时级",iac:"秒到分钟级"},{dim:"审计追踪",manual:"依赖人工记录",iac:"Git 历史自动记录"},{dim:"协作",manual:"口头传达、截图",iac:"Code Review、PR 流程"},{dim:"回滚",manual:"几乎不可能",iac:"git revert 一键回滚"}];function g(){l.value<d.length&&l.value++}function y(){i.value<r.length&&i.value++}return(X,a)=>(c(),o("div",I,[a[4]||(a[4]=s("div",{class:"demo-label"},"交互演示 ── 手动运维 vs 基础设施即代码",-1)),s("div",D,[(c(),o(u,null,_(k,e=>s("button",{key:e.key,class:m(["toggle-btn",{active:v.value===e.key}]),onClick:n=>v.value=e.key},t(e.icon)+" "+t(e.label),11,N)),64))]),s("div",P,[C(w,{name:"fade",mode:"out-in"},{default:f(()=>[v.value==="manual"?(c(),o("div",B,[a[0]||(a[0]=s("div",{class:"scene-title"},"手动运维流程",-1)),s("div",R,[(c(),o(u,null,_(d,(e,n)=>s("div",{key:n,class:m(["step-card",{done:l.value>n,current:l.value===n}])},[s("div",S,t(n+1),1),s("div",V,t(e.icon),1),s("div",E,t(e.text),1),s("div",G,t(e.risk),1)],2)),64))]),s("button",{class:"action-btn manual-btn",disabled:l.value>=d.length,onClick:g},t(l.value>=d.length?"全部完成（耗时约 2 小时）":"点击控制台按钮..."),9,T),l.value>=d.length?(c(),o("div",j," 手动操作完成，但存在风险：步骤不可重复、无法审计、容易遗漏配置。 ")):p("",!0)])):(c(),o("div",z,[a[2]||(a[2]=s("div",{class:"scene-title"},"IaC 代码驱动流程",-1)),s("div",{class:"code-block"},[a[1]||(a[1]=s("div",{class:"code-header"},"main.tf",-1)),s("pre",{class:"code-content"},[s("code",null,t(O))])]),s("div",A,[(c(),o(u,null,_(r,(e,n)=>s("div",{key:n,class:m(["iac-step",{done:i.value>n,current:i.value===n}])},[n>0?(c(),o("span",F,"→")):p("",!0),s("span",H,t(e.icon),1),s("span",J,t(e.text),1)],2)),64))]),s("button",{class:"action-btn iac-btn",disabled:i.value>=r.length,onClick:y},t(i.value>=r.length?"全部完成（耗时约 30 秒）":"执行下一步"),9,L),i.value>=r.length?(c(),o("div",M," 代码即文档，可重复、可审计、可版本控制，团队协作无忧。 ")):p("",!0)]))]),_:1})]),s("div",W,[s("table",null,[a[3]||(a[3]=s("thead",null,[s("tr",null,[s("th",null,"对比维度"),s("th",null,"手动运维"),s("th",null,"基础设施即代码")])],-1)),s("tbody",null,[(c(),o(u,null,_(h,e=>s("tr",{key:e.dim},[s("td",$,t(e.dim),1),s("td",q,t(e.manual),1),s("td",K,t(e.iac),1)])),64))])])])]))}},Z=x(Q,[["__scopeId","data-v-82ed40d3"]]);export{Z as default};

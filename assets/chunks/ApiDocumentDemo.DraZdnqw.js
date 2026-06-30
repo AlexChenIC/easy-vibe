@@ -1,0 +1,12 @@
+import{g as i}from"./theme.9nm-YoQ1.js";import{a as d}from"./index.DFeVJ7Y8.js";import{_ as n,o as p,c as l,j as s,t,k as o,b6 as r,h as m}from"./framework.CNUu10b_.js";const _={class:"demo-root"},u={class:"demo-header"},v={class:"title"},f={class:"demo-layout"},h={class:"left-panel"},D={class:"doc-section"},b={class:"doc-title"},x={class:"params-list"},k={class:"param-item"},g={class:"p-req"},y={class:"p-desc"},A={class:"param-item"},B={class:"p-req"},I={class:"p-desc"},T={class:"param-item"},q={class:"p-opt"},S={class:"p-desc"},O={class:"right-panel"},j={class:"result-title"},E={class:"result-code"},L={class:"info-box"},N={__name:"ApiDocumentDemo",setup(P){const{t:e}=i(d),c=m(()=>`from openai import OpenAI
+
+client = OpenAI(
+    api_key="sk-xxx",
+    base_url="https://api.deepseek.com"
+)
+
+response = client.chat.completions.create(
+    model="deepseek-chat",
+    messages=[{"role": "user", "content": "${e("apiDocument.userGreeting")}"}]
+)`);return(V,a)=>(p(),l("div",_,[s("div",u,[a[0]||(a[0]=s("span",{class:"icon"},"📖",-1)),s("span",v,t(o(e)("apiDocument.title")),1)]),s("div",f,[s("div",h,[a[4]||(a[4]=r(`<div class="doc-section" data-v-f0f4a00b><div class="doc-title" data-v-f0f4a00b>Base URL</div><code class="doc-code" data-v-f0f4a00b>https://api.deepseek.com</code></div><div class="doc-section" data-v-f0f4a00b><div class="doc-title" data-v-f0f4a00b>Endpoint</div><code class="doc-code" data-v-f0f4a00b>POST /v1/chat/completions</code></div><div class="doc-section" data-v-f0f4a00b><div class="doc-title" data-v-f0f4a00b>Headers</div><pre class="doc-pre" data-v-f0f4a00b>Authorization: Bearer sk-xxx
+Content-Type: application/json</pre></div>`,3)),s("div",D,[s("div",b,t(o(e)("apiDocument.bodyParams")),1),s("div",x,[s("div",k,[a[1]||(a[1]=s("span",{class:"p-name"},"model",-1)),s("span",g,t(o(e)("apiDocument.required")),1),s("span",y,t(o(e)("apiDocument.modelDesc")),1)]),s("div",A,[a[2]||(a[2]=s("span",{class:"p-name"},"messages",-1)),s("span",B,t(o(e)("apiDocument.required")),1),s("span",I,t(o(e)("apiDocument.messagesDesc")),1)]),s("div",T,[a[3]||(a[3]=s("span",{class:"p-name"},"temperature",-1)),s("span",q,t(o(e)("apiDocument.optional")),1),s("span",S,t(o(e)("apiDocument.temperatureDesc")),1)])])])]),s("div",O,[s("div",j,t(o(e)("apiDocument.resultTitle")),1),s("pre",E,[s("code",null,t(c.value),1)])])]),s("div",L,[s("strong",null,t(o(e)("apiDocument.coreTitle")),1),s("span",null,t(o(e)("apiDocument.coreText")),1)])]))}},H=n(N,[["__scopeId","data-v-f0f4a00b"]]);export{H as default};
